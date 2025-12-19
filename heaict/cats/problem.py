@@ -141,7 +141,7 @@ class HEA_problem(Real_Problem):
 
 
 class HEI_problem(Real_Problem):
-    def __init__(self, size, archetype, model, thermal, thermal_para=(), eles=[], batch_size=5000, seed=None, max_workers=6, n_var=4, n_obj=2, save_result=False, save_path='./'):
+    def __init__(self, size, archetype, model, thermal, thermal_para=(), eles=[], batch_size=5000, seed=666, max_workers=6, n_var=4, n_obj=2, save_result=False, save_path='./'):
         '''
         Problem to predict activity and FE of HEAs
 
