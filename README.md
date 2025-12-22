@@ -20,15 +20,18 @@ Copy the Folder `heaict` into the Lib folder under your Python directory, or run
 |periodictable|2.0.2|required|
 |numpy|1.26.4|required|
 |scipy|1.13.0|required|
-|pandas|2.2.2|required|
 |matplotlob|3.9.0|required|
-|tqdm|4.66.4|required|
+|pandas|2.2.2|optional|
+|tqdm|4.66.4|optional|
 |gpflow|2.10.0|optional|
 |tensorflow|2.19.0|optional|
 |tensorflow-probability|0.25.0|optional|
 |pygco|0.0.16|optional|
 
-Note: `pygco` is related to the graph cut algorithm. It can be ignored by disabling the `sparse_approx` parameter in the `ParetoDiscovery` class. `gpflow` and related `TensorFlow` libraries are used for Gaussian Process Regression (GPR) based on `gpflow`. If they are not installed, you may use GPR based on  the `scikit-learn` by importing the relevant models from `heaict.ml.GPR_scikit`.
+Note: 
+`pygco` is related to the graph cut algorithm. It can be ignored by disabling the `sparse_approx` parameter in the `ParetoDiscovery` class. 
+`gpflow` and related `TensorFlow` libraries are used for Gaussian Process Regression (GPR) based on `gpflow`. If they are not installed, you may use GPR based on  the `scikit-learn` by importing the relevant models from `heaict.ml.GPR_scikit`.
+`tqdm` and `pandas` are primarily used for training data preprocessing. If you perform this step using other methods or scripts, you may omit installing them.
 
 # Overview
 - **heaict/**[**cats**](https://github.com/jchddd/heaict/blob/main/heaict/cats):  An extended surface model that incorporates versatile sites to account for site-blocking effects. A microkinetic framework for evaluating NRR performance, which explicitly accounts for site coverage and the influence of applied potential U. And a problem class that integrates the above components, enabling the prediction of catalytic performance based on alloy composition.
