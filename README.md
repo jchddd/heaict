@@ -27,6 +27,9 @@ Copy the Folder `heaict` into the Lib folder under your Python directory, or run
 |tensorflow|2.19.0|optional|
 |tensorflow-probability|0.25.0|optional|
 |pygco|0.0.16|optional|
+
+Note: `pygco` is related to the graph cut algorithm. It can be ignored by disabling the `sparse_approx` parameter in the `ParetoDiscovery` class. `gpflow` and related `TensorFlow` libraries are used for Gaussian Process Regression (GPR) based on `gpflow`. If they are not installed, you may use GPR based on  the `scikit-learn` by importing the relevant models from `heaict.ml.GPR_scikit`.
+
 # Overview
 - **heaict/**[**cats**](https://github.com/jchddd/heaict/blob/main/heaict/cats):  An extended surface model that incorporates versatile sites to account for site-blocking effects. A microkinetic framework for evaluating NRR performance, which explicitly accounts for site coverage and the influence of applied potential U. And a problem class that integrates the above components, enabling the prediction of catalytic performance based on alloy composition.
 - **heaict/**[**data**](https://github.com/jchddd/heaict/blob/main/heaict/data): Identifying adsorption sites, filtering anomalous structures, and building the ML training dataset.
