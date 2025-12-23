@@ -42,6 +42,7 @@ Note:
 - **Data**: Data and results related to the paper.
 # Tutorials
 - Quick Start: Run a bi-objective optimization for NRR HEA catalysts: [Tutorial 0 - Quick Start.ipynb](https://github.com/jchddd/heaict/blob/main/Tutorial%200%20-%20Quick%20Start.ipynb)
+- Create HEA Slab: Creating HEA slab structures through element substitution: [Tutorial 1 - Create HEA Slab.ipynb](https://github.com/jchddd/heaict/blob/main/Tutorial%201%20-%20Create%20HEA%20Slab.ipynb)
 # Citation
 If you are interested in our work, you can read our literature, and cite us using
 ```
