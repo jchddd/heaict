@@ -181,7 +181,7 @@ class brute_force_surface():
                     
     def _B_to_zero(self, slab_index, B_vector):
         '''
-        Calculates an array used to distinguish A, B sites according to A_vector, A sites will be 0. Apply in create_slab.
+        Calculates an array used to distinguish A, B sites according to B_vector, B sites will be 0. Apply in create_slab.
         '''
         def vector_check(index_array):
             return np.sum((index_array + index_array[-1] * np.array(B_vector[1] + [0])) % np.array(B_vector[0] + [1]))
@@ -689,4 +689,5 @@ def get_activity_selectivity(site_adsenergy, Uspace=(-0.8, 0.2, 101), return_all
     else:
 
         return U_V_NRR[imax], U_V_HER[imax], U_FE[imax], Uspace[imax]
+
 
