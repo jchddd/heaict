@@ -28,7 +28,7 @@ class brute_force_surface():
     def __init__(
         self,
         surface_size=(30, 30),
-        n_neighbors=3,
+        n_layers=3,
         all_elements=['Mo', 'Mn', 'Fe', 'Ru', 'Co', 'Ni', 'Pd', 'Cu', 'N', 'H'],
         adsorbate_elements=['N', 'H'],
         para_grab_feature={}
@@ -36,7 +36,7 @@ class brute_force_surface():
         '''
         Parameters:
             - surface_size ((2, ) tuple): size of surface (/atom). Default = (30, 30)
-            - n_neighbors (int): n_neighbors / n_layers of the slab. Default = 2
+            - n_layers (int): number of layers of the slab. Default = 2
             - all_elements (list of str): all elements on slabs (including adsorbate) for node feature generation.
               Default = ['Mo', 'Mn', 'Fe', 'Ru', 'Co', 'Ni', 'Pd', 'Cu', 'N', 'H']
             - adsorbate_elements (list of str): adsorbate elements. Default = ['N', 'H']
@@ -44,7 +44,7 @@ class brute_force_surface():
         '''
         self.surface_size = surface_size
         self.n_x, self.n_y = surface_size
-        self.n_layers = n_neighbors
+        self.n_layers = n_layers
         self.periodic_boundary = [self.n_x, self.n_y, self.n_layers]
         self.adsorbate_elements = adsorbate_elements
 
@@ -689,3 +689,4 @@ def get_activity_selectivity(site_adsenergy, Uspace=(-0.8, 0.2, 101), return_all
     else:
 
         return U_V_NRR[imax], U_V_HER[imax], U_FE[imax], Uspace[imax]
+
