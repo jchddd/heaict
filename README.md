@@ -32,7 +32,7 @@ Copy the Folder `heaict` into the Lib folder under your Python directory, or run
 Note:   
 `pygco` is related to the graph cut algorithm. It can be ignored by disabling the `sparse_approx` parameter in the `ParetoDiscovery` class.   
 `gpflow` and related `TensorFlow` libraries are used for Gaussian Process Regression (GPR) based on `gpflow`. If they are not installed, you may use GPR based on  the `scikit-learn` by importing the relevant models from `heaict.ml.GPR_scikit`.  
-`tqdm` and `pandas` are primarily used for training data preprocessing (`heaict.data` related methods). If you perform this step using other methods or scripts, you may skip the installation of them.
+`tqdm` and `pandas` are primarily used for training data preprocessing (`heaict.data` related methods). If you perform this step using other methods or scripts, you may skip the installation of them.  
 `optuna` is mainly for hyperparameter tuning in ML training, but other methods can be used as well.
 # Overview
 - **heaict/**[**cats**](https://github.com/jchddd/heaict/blob/main/heaict/cats):  An extended surface model that incorporates versatile sites to account for site-blocking effects. A microkinetic framework for evaluating NRR performance, which explicitly accounts for site coverage and the influence of applied potential U. And a problem class that integrates the above components, enabling the prediction of catalytic performance based on alloy composition.
