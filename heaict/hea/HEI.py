@@ -289,8 +289,9 @@ class HEI():
         Parameters:
             - Tmin (float): minimum temperature. Default = 300
             - Tmax (float): maximum temperature. Default = 1500
-            - Tpoint (int): number of T sampling points. Default =50
-            - repeat (int): repeat times to search miniest site prefer
+            - Tpoint (int): number of T sampling points. Default = 50
+            - repeat (int): minimum repeat times to search miniest site prefer. Default = 6 
+            - maxtry (int): "Maximum number of retries on convergence issues. Default = 60
         Results:
             - Results will be sotre at self.sp_xxxx
         '''
