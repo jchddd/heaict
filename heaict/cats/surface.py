@@ -29,7 +29,7 @@ class brute_force_surface():
         self,
         surface_size=(30, 30),
         n_neighbors=3,
-        slab_elements=['Mo', 'Mn', 'Fe', 'Ru', 'Co', 'Ni', 'Pd', 'Cu', 'N', 'H'],
+        all_elements=['Mo', 'Mn', 'Fe', 'Ru', 'Co', 'Ni', 'Pd', 'Cu', 'N', 'H'],
         adsorbate_elements=['N', 'H'],
         para_grab_feature={}
     ):
@@ -37,7 +37,7 @@ class brute_force_surface():
         Parameters:
             - surface_size ((2, ) tuple): size of surface (/atom). Default = (30, 30)
             - n_neighbors (int): n_neighbors / n_layers of the slab. Default = 2
-            - slab_elements (list of str): all elements on slabs (including adsorbate) for node feature generation.
+            - all_elements (list of str): all elements on slabs (including adsorbate) for node feature generation.
               Default = ['Mo', 'Mn', 'Fe', 'Ru', 'Co', 'Ni', 'Pd', 'Cu', 'N', 'H']
             - adsorbate_elements (list of str): adsorbate elements. Default = ['N', 'H']
             - para_grab_feature (dict): parameters for grab_element_feature. Default = {}
@@ -51,7 +51,7 @@ class brute_force_surface():
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         torch.set_num_threads(cpu_count())
         
-        self.df_feature = grab_element_feature(slab_elements, **para_grab_feature)
+        self.df_feature = grab_element_feature(all_elements, **para_grab_feature)
         self.mapping_eleTindex = {element: index for index, element in enumerate(self.df_feature.index)}
         self.feature_tensor = torch.Tensor(np.vstack([self.df_feature.loc[i, :] for i in self.df_feature.index])).to(self.device)
         
@@ -687,4 +687,5 @@ def get_activity_selectivity(site_adsenergy, Uspace=(-0.8, 0.2, 101), return_all
     elif return_all:
         return U_V_NRR, U_T_NRR, U_PDS_G1, U_PDS_G2, U_PDS_NRR, U_V_HER, U_T_HER, U_PDS_G3, U_PDS_G4, U_PDS_HER, U_FE
     else:
+
         return U_V_NRR[imax], U_V_HER[imax], U_FE[imax], Uspace[imax]
