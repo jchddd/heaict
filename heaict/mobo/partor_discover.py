@@ -314,8 +314,8 @@ def _get_box_const_value_jacobian_hessian(x, bounds, constr_func):
     n_active_const, n_var = len(active_idx), len(x)
 
     g = constr_func(x.reshape(1, -1))
-    if np.any(g[2:] > 0):
-        n_active_const += 1
+    # if np.any(g[2:] > 0):
+        # n_active_const += 1
 
     if n_active_const > 0:
         G = np.zeros(n_active_const)
@@ -327,11 +327,11 @@ def _get_box_const_value_jacobian_hessian(x, bounds, constr_func):
             else:
                 constraint[idx] = -1
             DG[i] = constraint
-        if np.any(g[2:] > 0):
-            constraint = np.array([-1, -1, -1, 1])
-            for idx in active_idx:
-                constraint[idx] = 0
-            DG[-1] = constraint
+        # if np.any(g[2:] > 0):
+            # constraint = np.array([-1, -1, -1, 1])
+            # for idx in active_idx:
+                # constraint[idx] = 0
+            # DG[-1] = constraint
         HG = np.zeros((n_active_const, n_var, n_var))
         return G, DG, HG
     else:
