@@ -83,11 +83,12 @@ def plot_cell_sample_2D(b, samples=None):
         - b (heaict.mobo.buffer class)
         - samples (np.array or None): normalized samples
     '''
-    fig = plt.figure(figsize=(12, 12))
+    fig = plt.figure(figsize=(9, 9))
     
     # plot vertices and edges
     for v in b.cell_vertices:
-        plt.scatter(v[0], v[1], c='r', label='vertices')
+        plt.scatter(v[0], v[1], c='r')
+    plt.scatter(-1, -1, c='r', label='vertices')
     for e in b.edges:
         vs = b.cell_vertices[e[0]]
         ve = b.cell_vertices[e[1]]
@@ -102,13 +103,13 @@ def plot_cell_sample_2D(b, samples=None):
             def equations(vars):
                 x, y= vars
                 eq1 = x / y - f[0] / f[1]
-                eq2 = (x-1)**2 + (y-1)** - 1
+                eq2 = (x-1)**2 + (y-1)**2 - 1
                 return [eq1, eq2]
             solution = fsolve(equations, f)
             sF = np.vstack([sF, solution])
         sF = np.where(sF<=1, sF, 1)
         sF = np.where(sF>=0, sF, 0)
-        ax.scatter(sF[:, 0], sF[:, 1], color='blue', label='projected samples')
+        plt.scatter(sF[:, 0], sF[:, 1], color='blue', label='projected samples')
 
     # set axis property
     plt.axis('equal')
@@ -168,7 +169,7 @@ def plot_cell_sample_3D(b, samples=None):
                     x, y, z = vars
                     eq1 = x / y - f[0] / f[1]
                     eq2 = x / z - f[0] / f[2]
-                    eq3 = (x-1)**2 + (y-1)** 2 + (z-1)**2 - 1
+                    eq3 = (x-1)**2 + (y-1)**2 + (z-1)**2 - 1
                     return [eq1, eq2, eq3]
                 solution = fsolve(equations, f)
                 sF = np.vstack([sF, solution])
