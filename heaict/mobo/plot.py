@@ -92,7 +92,7 @@ def plot_cell_sample_2D(b, samples=None):
     for e in b.edges:
         vs = b.cell_vertices[e[0]]
         ve = b.cell_vertices[e[1]]
-        plt.plot([vs[0], ve[0]],[vs[1], ve[1]], c='k--')
+        plt.plot([vs[0], ve[0]],[vs[1], ve[1]], 'k--')
 
     # plot samples
     if samples is not None:
