@@ -503,7 +503,7 @@ class brute_force_surface():
             - indices (1D-array like int or None): indices of sites to be consider. Default = None
         Return:
             - a list of tuple including sites and numbers
-            - for 4-hollow to set represent long and short diagonal element, for 3-hollow 3 elements are all listed
+            - for 4-hollow, their set represent long and short diagonal element, for 3-hollow 3 elements are all listed
         '''
         if indices is None:
             site_ensembles = self.site_ensembles
@@ -522,7 +522,9 @@ class brute_force_surface():
             site_eles = self.slab[x_idx, y_idx, z_idx]
     
             site_set = None
-            if   site_eles.shape[0] == 3:
+            if   site_eles.shape[0] == 1 or site_eles.shape[0] == 2:
+                site_set = tuple(site_eles)
+            elif site_eles.shape[0] == 3:
                 site_set = sort_by_frequency_unique(site_eles)
                 if   len(site_set) == 1:
                     site_set = tuple(site_set * 3)
@@ -557,7 +559,7 @@ class brute_force_surface():
         
         return sorted_combined
 
-    def plot_surface(self, ax, color_dict, atomic_vector, x_range=None, y_range=None, n_layers=1, plot_site=True, site_indices=None, atom_edge={}, site_line={}):
+    def plot_surface(self, ax, color_dict, atomic_vector, x_range=None, y_range=None, n_layers=1, plot_site=True, site_indices=None, atom_scatter={}, site_line={}):
         '''
         Draw a schematic diagram of the surface atomic arrangement and adsorption sites.
 
@@ -571,7 +573,7 @@ class brute_force_surface():
             - n_layers (int): Number of layers to plot. Default = 1
             - plot_site (bool): Show sites or not. (mainly used for the display of 3 and 4 fold hollow sites). Default = True
             - site_indices ((n, ) int list): Select the sites that need to be displayed. Default = None
-            - atom_edge (dict): Parameters of atomic edges. Edge related parameters from plt.scatter. Default = {}
+            - atom_scatter (dict): Parameters of atomic edges. Edge related parameters from plt.scatter. Default = {}
             - site_line (dict): Parameters of site edges. Edge related parameters from plt.plot. Default = {}
         '''
         if x_range is None:
@@ -589,7 +591,7 @@ class brute_force_surface():
                     atom_position = np.array([x, y, layer]) @ atomic_vector #; atom_coords.append(atom_position)
                     atom_zorder = topmost_surface_zorder - layer
                     element = Element.from_Z(self.slab[x, y, layer]).symbol #; atom_symbols.append(element)
-                    ax.scatter(atom_position[0], atom_position[1], color=color_dict[element], zorder=atom_zorder, **atom_edge)
+                    ax.scatter(atom_position[0], atom_position[1], color=color_dict[element], zorder=atom_zorder, **atom_scatter)
         # plot adsorption sites
         if plot_site:
             if site_indices is None:
@@ -689,6 +691,7 @@ def get_activity_selectivity(site_adsenergy, Uspace=(-0.8, 0.2, 101), return_all
     else:
 
         return U_V_NRR[imax], U_V_HER[imax], U_FE[imax], Uspace[imax]
+
 
 
 
