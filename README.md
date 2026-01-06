@@ -47,6 +47,8 @@ Note:
 - Site Identification: Identify adsorption configurations and detect anomalous structures: [Tutorial 2 - Site Identification.ipynb](https://github.com/jchddd/heaict/blob/main/Tutorials/Tutorial%202%20-%20Site%20Identification.ipynb)
 - Dataset Construction: Construct a machine learning training dataset: [Tutorial 3 - Dataset Construction.ipynb](https://github.com/jchddd/heaict/blob/main/Tutorials/Tutorial%203%20-%20Dataset%20Construction.ipynb)
 - ML Model Training: Train the ASGCNN model for adsorption energy prediction: [Tutorial 4 - ML Model Training.ipynb](https://github.com/jchddd/heaict/blob/main/Tutorials/Tutorial%204%20-%20ML%20Model%20Training.ipynb)
+- Stability of HEA and HEI: HEA property calculations and site occupancy analysis in HEI: [Tutorial 5 - Stability of HEA and HEI.ipynb](https://github.com/jchddd/heaict/blob/main/Tutorials/Tutorial%205%20-%20Stability%20of%20HEA%20and%20HEI.ipynb)
+- Extended Surface Model: Catalytic performance prediction based on the extended surface model, exemplified by the NRR reaction: [Tutorial 6 - Extended Surface Model.ipynb](https://github.com/jchddd/heaict/blob/main/Tutorials/Tutorial%206%20-%20Extended%20Surface%20Model.ipynb)
 
 
 
