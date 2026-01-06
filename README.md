@@ -45,6 +45,10 @@ Note:
 - Quick Start: Run a bi-objective optimization for NRR HEA catalysts: [Tutorial 0 - Quick Start.ipynb](https://github.com/jchddd/heaict/blob/main/Tutorials/Tutorial%200%20-%20Quick%20Start.ipynb)
 - Create HEA Slab: Creating HEA slab structures through element substitution: [Tutorial 1 - Create HEA Slab.ipynb](https://github.com/jchddd/heaict/blob/main/Tutorials/Tutorial%201%20-%20Create%20HEA%20Slab.ipynb)
 - Site Identification: Identify adsorption configurations and detect anomalous structures: [Tutorial 2 - Site Identification.ipynb](https://github.com/jchddd/heaict/blob/main/Tutorials/Tutorial%202%20-%20Site%20Identification.ipynb)
+- Dataset Construction: Construct a machine learning training dataset: [Tutorial 3 - Dataset Construction.ipynb](https://github.com/jchddd/heaict/blob/main/Tutorials/Tutorial%203%20-%20Dataset%20Construction.ipynb)
+- ML Model Training: Train the ASGCNN model for adsorption energy prediction: [Tutorial 4 - ML Model Training.ipynb](https://github.com/jchddd/heaict/blob/main/Tutorials/Tutorial%204%20-%20ML%20Model%20Training.ipynb)
+
+
 
 # Citation
 If you are interested in our work, you can read our literature, and cite us using
