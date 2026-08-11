@@ -56,5 +56,19 @@ Note:
 # Citation
 If you are interested in our work, you can read our literature, and cite us using
 ```
-Submission in progress
+@article{10.1021/acscatal.5c09112,
+    author = {Zhou, Jing and Wu, Geliang and Hu, Wangyu and Huang, Bowen and Yuan, Dingwang},
+    title = {Multiobjective Computational Screening of High Entropy Alloys and Intermetallics toward High-Performance Nitrogen Reduction Catalysts},
+    journal = {ACS Catalysis},
+    volume = {16},
+    number = {11},
+    pages = {9836-9849},
+    year = {2026},
+    month = {05},
+    abstract = {In this work, we develop a multisite approach to evaluate nitrogen reduction reaction (NRR) performance and apply it in a multiobjective optimization of high entropy alloys (HEAs) and high entropy intermetallics (HEIs) to identify candidates that simultaneously deliver high activity, strong selectivity, and enhanced structural stability. To account for competitive adsorption between N2 and H, our multisite model employs versatile sites that can host multiple adsorbates to capture site blocking effects on extended surfaces and incorporates a microkinetic model that explicitly tracks H and N2 site coverages to evaluate NRR activity and selectivity. Through a stepwise optimization, Ni8Pd35Cu7Mo35Mn15 HEA was identified as a candidate catalyst. Density functional theory (DFT) calculations reveal that its dominant active site, Mo3Mn@Pd, features a limiting potential of −0.32 V while effectively suppressing the competing hydrogen evolution reaction (HER). Electronic structure analysis reveals that the synergistic effect between Mo and Mn, coupled with the electronic modulation by Pd, is the key to its promising catalytic performance.},
+    issn = {2155-5435},
+    doi = {10.1021/acscatal.5c09112},
+    url = {https://doi.org/10.1021/acscatal.5c09112},
+    eprint = {https://pubs.acs.org/accacs/article-pdf/16/11/9836/63621781/cs-2025-09112e.pdf},
+}
 ```
